@@ -9,7 +9,7 @@ package lexical;
 public enum KeyWord {
 
 	INT("int", 2), FLOAT("float", 3), BOOL("bool", 4), RECORD("record", 5), IF("if", 6), ELSE("else", 7), DO("do", 8),
-	WHILE("while", 9), AND("and", 20), OR("or", 21), NOT("not", 22), TRUE("true", 35), FALSE("false", 36);
+	WHILE("while", 9), AND("and", 20), OR("or", 21), NOT("not", 22), TRUE("true", 35), FALSE("false", 36), THEN("then", 37);
 
 	//	关键字在代码中的表现形式
 	private String name;

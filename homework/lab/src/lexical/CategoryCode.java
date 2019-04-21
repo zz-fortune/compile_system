@@ -12,7 +12,7 @@ public enum CategoryCode {
 	NE("NE", 14), G("G", 15), L("L", 16), GE("GE", 17), LE("LE", 18), E("E", 19), AND("AND", 20), OR("OR", 21),
 	NOT("NOT", 22), ASSIGN("ASSIGN", 23), SEMI("SEMI", 24), COMMA("COMMA", 25), ID("ID", 26), LB("LB", 27),
 	RB("RB", 28), LCB("LCB", 29), RCB("RCB", 30), COLON("COLON", 31), NOTE("NOTE", 32), CONSTI("CONSTI", 33),
-	CONSTF("CONSTF", 34), TRUE("TRUE", 35), FALSE("FALSE", 36);
+	CONSTF("CONSTF", 34), TRUE("TRUE", 35), FALSE("FALSE", 36), THEN("THEN",37);
 
 	//	每一类字符包括标记符和编码
 	private String name;

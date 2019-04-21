@@ -16,16 +16,16 @@ import exception.TextOverlargeException;
  */
 public class LexicalBuffer {
 
-	// 缓存区的大小
+	// 	缓存区的大小
 	private final int BUF_SIZE = 1024 * 1024;
 
 //	public static final int TEXT_MODE = 1;
 //	public static final int FILE_MODE = 2;
 
 	private char[] buf = new char[BUF_SIZE]; // 缓存区数组
-	private int rawNum = 1; // 当前处理的行号
-	private int colNum = 1; // 当前处理的列号
-	private int current = 0; // 当前处理到的字符位置
+	private int rawNum = 1; //	当前处理的行号
+	private int colNum = 1; //	当前处理的列号
+	private int current = 0; //	当前处理到的字符位置
 	private int len; // 缓存数组中有效数据的长度
 //	private int mode;
 	private BufferedReader reader = null; // 读取文件的reader
@@ -72,7 +72,7 @@ public class LexicalBuffer {
 			this.reader = new BufferedReader(new FileReader(file));
 			this.len = reader.read(this.buf, 0, BUF_SIZE);
 
-			// 如果已经读完文件中的数据，则设置为不可从文件中读
+			// 	如果已经读完文件中的数据，则设置为不可从文件中读
 			if (len < BUF_SIZE) {
 				this._available = false;
 			}
@@ -90,7 +90,7 @@ public class LexicalBuffer {
 	public char next() {
 		char tmp;
 
-		// 当前缓存区数组中还有有效数据
+		// 	当前缓存区数组中还有有效数据
 		if (this.current < this.len) {
 			tmp = buf[current];
 		} else if (_available) { // 缓存区数组无有效数据，从文件中读入
@@ -102,15 +102,15 @@ public class LexicalBuffer {
 		this.colNum++;
 		this.current++;
 
-		// 遇到 '\r' 符号，直接跳过
+		// 	遇到 '\r' 符号，直接跳过
 		if (tmp == '\r') {
 			tmp = this.next();
 		}
-		// 若是遇到回车符，直接跳过
+		// 	若是遇到回车符，直接跳过
 		if (tmp == '\n') {
 			this.rawNum++;
-			this.colNum = 1;
-			return this.next();
+			this.colNum = 0;
+			return ' ';
 		} else {
 			return tmp;
 		}
