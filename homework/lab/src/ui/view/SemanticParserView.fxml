@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.SemanticParserViewController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="75.0" layoutY="135.0" minHeight="20.0" mnemonicParsing="false" onAction="#importCode" prefHeight="30.0" prefWidth="100.0" text="导入源码" />
+            <Button layoutX="75.0" layoutY="235.0" minHeight="20.0" mnemonicParsing="false" onAction="#lexicalParse" prefHeight="30.0" prefWidth="100.0" text="词法分析" />
+            <Button layoutX="75.0" layoutY="335.0" minHeight="20.0" mnemonicParsing="false" onAction="#grammerParse" prefHeight="30.0" prefWidth="100.0" text="语法分析" />
+            <Button layoutX="75.0" layoutY="435.0" minHeight="20.0" mnemonicParsing="false" onAction="#semanticParse" prefHeight="30.0" prefWidth="100.0" text="语义分析" />
+         </children>
+      </Pane>
+      <Pane layoutX="200.0" prefHeight="600.0" prefWidth="700.0">
+         <children>
+            <TextArea fx:id="textarea" editable="false" layoutX="50.0" layoutY="50.0" prefHeight="500.0" prefWidth="600.0" promptText="输入源码......" />
+            <TableView fx:id="semaresult" layoutX="50.0" layoutY="50.0" prefHeight="320.0" prefWidth="300.0">
+              <columns>
+                <TableColumn fx:id="address" prefWidth="60.0" text="地址" />
+                <TableColumn fx:id="action" prefWidth="60.0" text="动作" />
+                  <TableColumn fx:id="arg1" prefWidth="60.0" text="参数1" />
+                  <TableColumn fx:id="arg2" prefWidth="60.0" text="参数2" />
+                  <TableColumn fx:id="result" prefWidth="60.0" text="结果" />
+              </columns>
+            </TableView>
+            <TextArea fx:id="tips" editable="false" layoutX="50.0" layoutY="400.0" prefHeight="150.0" prefWidth="600.0" />
+            <TableView fx:id="signtable" layoutX="370.0" layoutY="50.0" prefHeight="320.0" prefWidth="280.0">
+              <columns>
+                <TableColumn fx:id="name" prefWidth="70.0" text="name" />
+                <TableColumn fx:id="category" prefWidth="70.0" text="categoty" />
+                  <TableColumn fx:id="type" prefWidth="70.0" text="type" />
+                  <TableColumn fx:id="offset" prefWidth="70.0" text="offset" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

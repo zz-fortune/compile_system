@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/Test.java=UTF-8
 encoding//src/exception/TextOverlargeException.java=UTF-8
 encoding//src/grammer/GrammerParser.java=UTF-8
 encoding//src/grammer/LR1Item.java=UTF-8
@@ -8,6 +9,11 @@ encoding//src/lexical/LexicalBuffer.java=UTF-8
 encoding//src/lexical/LexicalController.java=UTF-8
 encoding//src/lexical/LexicalScanner.java=UTF-8
 encoding//src/lexical/LexicalToken.java=UTF-8
+encoding//src/lexical/SignTableItem.java=UTF-8
+encoding//src/semantics/CodeItem.java=UTF-8
+encoding//src/semantics/SemanticsParser.java=UTF-8
+encoding//src/semantics/Varible.java=UTF-8
 encoding//src/ui/controller/CompilerApp.java=UTF-8
 encoding//src/ui/controller/GrammerParserViewController.java=UTF-8
 encoding//src/ui/controller/LexicalParserWindowController.java=UTF-8
+encoding//src/ui/controller/SemanticParserViewController.java=UTF-8

@@ -18,6 +18,12 @@ import lexical.LexicalBuffer;
 import lexical.LexicalScanner;
 import lexical.LexicalToken;
 
+/**
+ * 语法分析器窗口的控制器
+ * 
+ * @author zhang heng
+ *
+ */
 public class GrammerParserViewController {
 
 	@FXML
@@ -55,6 +61,8 @@ public class GrammerParserViewController {
 		File file = this.app.chooseInputFile();
 		if (file != null && file.exists()) {
 			this.sourceinput.setText(file.getPath());
+		}else {
+			return;
 		}
 		BufferedReader reader = null;
 		try {
@@ -86,6 +94,8 @@ public class GrammerParserViewController {
 		File file = this.app.chooseInputFile();
 		if (file != null && file.exists()) {
 			this.grammerinput.setText(file.getPath());
+		}else {
+			return;
 		}
 		BufferedReader reader = null;
 		try {
@@ -204,6 +214,7 @@ public class GrammerParserViewController {
 			stringBuffer.append("\n");
 		}
 		this.lrtable.setText(stringBuffer.toString());
+		// TODO
 	}
 
 }

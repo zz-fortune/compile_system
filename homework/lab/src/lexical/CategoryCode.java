@@ -49,7 +49,7 @@ public enum CategoryCode {
 	 * 
 	 * @return 标记符
 	 */
-	private String getName() {
+	public String getName() {
 		return name;
 
 	}

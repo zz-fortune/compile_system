@@ -5,23 +5,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.RootViewController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="功能">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#loadLexicalParser" text="词法分析" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadGrammerParser" text="语法分析" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadSemanticsParser" text="语义分析" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="设置">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#exit" text="退出" />
             </items>
           </Menu>
         </menus>

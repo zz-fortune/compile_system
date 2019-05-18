@@ -27,7 +27,6 @@ public class LexicalBuffer {
 	private int colNum = 1; //	当前处理的列号
 	private int current = 0; //	当前处理到的字符位置
 	private int len; // 缓存数组中有效数据的长度
-//	private int mode;
 	private BufferedReader reader = null; // 读取文件的reader
 	private boolean _available; // 标记文件是否读完
 

@@ -11,10 +11,10 @@ import javafx.beans.property.StringProperty;
  */
 public class LexicalToken {
 
-	private StringProperty word; // 合法的token序列
-	private StringProperty category; // token序列对应的类别标记符
-	private StringProperty value; // token序列对应的属性值
-	private int lineNum = -1;
+	private StringProperty word; // 合法的 token 序列
+	private StringProperty category; // token 序列对应的类别标记符
+	private StringProperty value; // token 序列对应的属性值
+	private int lineNum = -1;	//	Token 出现的行号
 
 	/**
 	 * 构造器

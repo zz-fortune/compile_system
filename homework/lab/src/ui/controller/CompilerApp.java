@@ -16,10 +16,11 @@ import javafx.stage.Stage;
 public class CompilerApp extends Application {
 
 	// 	词法分析窗口的一些参数
-	private final String title = "词法分析";
+	private final String title = "简单的语法编译器";
 	private final String lexicalParserWindowResource = "/ui/view/LexicalParserWindow.fxml";
 	private final String rootLayoutResource = "/ui/view/RootLayout.fxml";
 	private final String grammerParserView = "/ui/view/GrammerParserView.fxml";
+	private final String semanticParserView="/ui/view/SemanticParserView.fxml";
 
 	private Stage stage;
 	private BorderPane rootLayout;
@@ -29,8 +30,9 @@ public class CompilerApp extends Application {
 		this.stage = primaryStage;
 		this.stage.setTitle(title);
 		initRootLayout();
-//		loadLexicalParserView();
-		loadGrammerParserView();
+		loadLexicalParserView();
+//		loadGrammerParserView();
+//		loadSemanticParserView();
 	}
 
 	/**
@@ -44,6 +46,9 @@ public class CompilerApp extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		RootViewController controller=loader.getController();
+		controller.setApp(this);
 		Scene scene = new Scene(this.rootLayout);
 		this.stage.setScene(scene);
 		this.stage.setResizable(false);
@@ -79,6 +84,12 @@ public class CompilerApp extends Application {
 	public void loadGrammerParserView() {
 		FXMLLoader loader=setView(grammerParserView);
 		GrammerParserViewController controller=loader.getController();
+		controller.setApp(this);
+	}
+	
+	public void loadSemanticParserView() {
+		FXMLLoader loader=setView(semanticParserView);
+		SemanticParserViewController controller=loader.getController();
 		controller.setApp(this);
 	}
 

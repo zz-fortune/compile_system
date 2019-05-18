@@ -16,6 +16,7 @@ public class LexicalScanner {
 	private final List<LexicalToken> tokens = new ArrayList<>(); // 已处理的 token 列表
 	private LexicalBuffer buffer; // 缓存区
 	private StringBuffer token = new StringBuffer(); // 一个 token 的缓存区
+	private List<String> errors= new ArrayList<String>();
 
 	private Map<String, SignTableItem> signTable = new HashMap<String, SignTableItem>(); // 符号表
 
@@ -278,6 +279,7 @@ public class LexicalScanner {
 			break;
 		default: // 处理非法字符
 			category = CategoryCode.getName(1);
+			errors.add(this.token.toString());
 			break;
 		}
 
@@ -289,6 +291,10 @@ public class LexicalScanner {
 		}
 
 		this.tokens.add(new LexicalToken(word, category, value, buffer.getRawNum()));
+	}
+	
+	public List<String> getErrors() {
+		return errors;
 	}
 
 	public Map<String, SignTableItem> getSignTable() {
